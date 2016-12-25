@@ -164,7 +164,7 @@ pause;
 %  lambda to see how the fit and learning curve change.
 %
 
-lambda = 0;
+lambda = 1;
 [theta] = trainLinearReg(X_poly, y, lambda);
 
 % Plot training data and fit
@@ -214,6 +214,57 @@ fprintf('lambda\t\tTrain Error\tValidation Error\n');
 for i = 1:length(lambda_vec)
 	fprintf(' %f\t%f\t%f\n', ...
             lambda_vec(i), error_train(i), error_val(i));
+end
+
+fprintf('Program paused. Press enter to continue.\n');
+pause;
+
+%% =========== Part 9: Computing test set error ===================
+%  Compute the test error using the best value of lambda you found.
+%  In our cross validation, we obtained a test error of 3.8599 for lambda = 3.
+%
+
+lambda = 3;
+
+theta = trainLinearReg(X_poly, y, lambda);
+error_test = linearRegCostFunction(X_poly_test, ytest, theta, 0);
+
+%fprintf(['Error with test set: %f\n'], error_test);
+fprintf(['Test error (lambda = %f): %f'...
+         '\n(this value should be about 3.8599)\n'], lambda, error_test);
+
+fprintf('Program paused. Press enter to continue.\n');
+pause;
+
+%% =========== Part 10: Learning curves with randomly selected examples =======
+%  To determine the training error and cross validation error for i examples,
+%  you should first randomly select i examples from the training set and
+%  i examples from the cross validation set. You will then learn the parameters
+%  theta using the randomly chosen training set and evaluate the parameters
+%  theta on the randomly chosen training set and cross validation set.
+%  The above steps should then be repeated multiple times (say 50) and
+%  the averaged error should be used to determine the training error and
+%  cross validation error for i examples.
+%
+
+steps = 50;
+lambda = 0.01;
+[theta] = trainLinearReg(X_poly, y, lambda);
+
+[error_train, error_val] = ...
+    learningCurveWithRandomExamples(X_poly, y, X_poly_val, yval, lambda, steps);
+plot(1:m, error_train, 1:m, error_val);
+
+title(sprintf('Polynomial Regression Learning Curve (lambda = %f)', lambda));
+xlabel('Number of training examples')
+ylabel('Error')
+axis([0 13 0 100])
+legend('Train', 'Cross Validation')
+
+fprintf('Polynomial Regression (lambda = %f)\n\n', lambda);
+fprintf('# Training Examples\tTrain Error\tCross Validation Error\n');
+for i = 1:m
+    fprintf('  \t%d\t\t%f\t%f\n', i, error_train(i), error_val(i));
 end
 
 fprintf('Program paused. Press enter to continue.\n');
