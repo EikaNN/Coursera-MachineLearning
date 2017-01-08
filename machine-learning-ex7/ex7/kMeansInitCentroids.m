@@ -13,12 +13,16 @@ centroids = zeros(K, size(X, 2));
 %               the dataset X
 %
 
+% Initialize the centroids to be random unique examples
 
+% Use unique examples to prevent duplicate centroids
+X_unique = unique(X, 'rows');
 
+% Randomly reorder the indices of unique examples
+randidx = randperm(size(X_unique, 1));
 
-
-
-
+% Take the first K unique examples as centroids
+centroids = X_unique(randidx(1:K), :);
 
 % =============================================================
 

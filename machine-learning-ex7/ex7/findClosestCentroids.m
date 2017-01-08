@@ -21,11 +21,27 @@ idx = zeros(size(X,1), 1);
 % Note: You can use a for-loop over the examples to compute this.
 %
 
+% Number of training examples
+m = size(X, 1);
 
+for i = 1:m
 
+    [closest_centroid_index, lowest_centroid_distance] = deal(Inf);
+    
+    for k = 1:K
+        
+        centroid_distance = norm(X(i,:) - centroids(k,:))^2;
 
+        if centroid_distance < lowest_centroid_distance
+            closest_centroid_index = k;
+            lowest_centroid_distance = centroid_distance;
+        end
 
+    end
 
+    idx(i) = closest_centroid_index;
+
+end
 
 % =============================================================
 
