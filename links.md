@@ -23,4 +23,7 @@ Here are some interesting links that are related with course contents
 * [Drawbacks of K-means](http://stats.stackexchange.com/questions/133656/how-to-understand-the-drawbacks-of-k-means)
 * [Principal Component Analysis Explained Visually](http://setosa.io/ev/principal-component-analysis/)
 * [Making sense of PCA](http://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues/140579#140579)
-* [A tutorial on PCA] (http://www.cs.otago.ac.nz/cosc453/student_tutorials/principal_components.pdf)
+* [A tutorial on PCA](http://www.cs.otago.ac.nz/cosc453/student_tutorials/principal_components.pdf)
+
+## Week 9
+* [Multivariate Gaussian Distribution](http://cs229.stanford.edu/section/gaussians.pdf)
