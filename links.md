@@ -3,6 +3,7 @@
 Here are some interesting links that are related with course contents
 
 * [CS 229 Machine Learning Course Materials](http://cs229.stanford.edu/materials.html)
+* [Collection of Academic Papers](http://www.bradblock.com.s3-website-us-west-1.amazonaws.com/mll.html)
 
 ## Week 1
 * [Linear Regression](http://eli.thegreenplace.net/2016/linear-regression/)
@@ -16,6 +17,15 @@ Here are some interesting links that are related with course contents
 * [Derivation of the Normal Equation for linear regression](http://eli.thegreenplace.net/2014/derivation-of-the-normal-equation-for-linear-regression/)
 * [The Normal Equation and matrix calculus](http://eli.thegreenplace.net/2015/the-normal-equation-and-matrix-calculus/)
 
+## Week 4
+* [Combinations and Permutations](http://www.mathsisfun.com/combinatorics/combinations-permutations.html)
+
+## Week 5
+* [Backpropagation algorithm](http://neuralnetworksanddeeplearning.com/chap2.html)
+
+## Week 6
+* [Bias and Variance](http://www.cedar.buffalo.edu/~srihari/CSE555/Chap9.Part2.pdf)
+
 ## Week 7
 * [LIBSVM](https://www.csie.ntu.edu.tw/~cjlin/libsvm/)
 
@@ -27,3 +37,4 @@ Here are some interesting links that are related with course contents
 
 ## Week 9
 * [Multivariate Gaussian Distribution](http://cs229.stanford.edu/section/gaussians.pdf)
+* [Outlier Detection Techniques](http://www.dbs.ifi.lmu.de/~zimek/publications/KDD2010/kdd10-outlier-tutorial.pdf)

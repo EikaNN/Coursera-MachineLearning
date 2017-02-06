@@ -111,8 +111,8 @@ pause;
 
 fprintf('\nEvaluating sigmoid gradient...\n')
 
-g = sigmoidGradient([1 -0.5 0 0.5 1]);
-fprintf('Sigmoid gradient evaluated at [1 -0.5 0 0.5 1]:\n  ');
+g = sigmoidGradient([-1 -0.5 0 0.5 1]);
+fprintf('Sigmoid gradient evaluated at [-1 -0.5 0 0.5 1]:\n  ');
 fprintf('%f ', g);
 fprintf('\n\n');
 
@@ -165,8 +165,8 @@ checkNNGradients(lambda);
 debug_J  = nnCostFunction(nn_params, input_layer_size, ...
                           hidden_layer_size, num_labels, X, y, lambda);
 
-fprintf(['\n\nCost at (fixed) debugging parameters (w/ lambda = 10): %f ' ...
-         '\n(this value should be about 0.576051)\n\n'], debug_J);
+fprintf(['\n\nCost at (fixed) debugging parameters (w/ lambda = %f): %f ' ...
+         '\n(this value should be about 0.576051)\n\n'], lambda, debug_J);
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
@@ -183,10 +183,10 @@ fprintf('\nTraining Neural Network... \n')
 
 %  After you have completed the assignment, change the MaxIter to a larger
 %  value to see how more training helps.
-options = optimset('MaxIter', 50);
+options = optimset('MaxIter', 350);
 
 %  You should also try different values of lambda
-lambda = 1;
+lambda = 0.1;
 
 % Create "short hand" for the cost function to be minimized
 costFunction = @(p) nnCostFunction(p, ...
